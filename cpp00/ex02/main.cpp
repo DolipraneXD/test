@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moel-fat <moel-fat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: doliprane <doliprane@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 11:36:42 by moel-fat          #+#    #+#             */
-/*   Updated: 2024/10/12 11:36:46 by moel-fat         ###   ########.fr       */
+/*   Updated: 2024/11/03 16:28:05 by doliprane        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,11 @@ int	Account::checkAmount(void) const
 void	Account::_displayTimestamp(void)
 {
 	time_t	now;
+	char	ctime[50];
 
 	now = time(NULL);
-	std::cout << std::put_time(localtime(&now), "[%Y%m%d_%H%M%S] ");
+	strftime(ctime , 50, "[%Y%m%d_%H%M%S] ", localtime(&now));
+	std::cout << ctime;
 }
 
 void	Account::displayAccountsInfos(void)
